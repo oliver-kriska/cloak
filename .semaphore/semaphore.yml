@@ -52,7 +52,7 @@ blocks:
               values: ["23.3", "24.2"]
           commands:
            - cache restore dialyzer-plt-$ERLANG_VERSION-
-            - cache restore dialyzer-plt-$ERLANG_VERSION-$SEMAPHORE_GIT_PR_BRANCH
-            - mix dialyzer --ignore-exit-status
-            - cache store dialyzer-plt-$ERLANG_VERSION-$SEMAPHORE_GIT_PR_BRANCH$SEMAPHORE_WORKFLOW_NUMBER priv/plts
-            - mix dialyzer --no-check --no-compile
+           - cache restore dialyzer-plt-$ERLANG_VERSION-$SEMAPHORE_GIT_PR_BRANCH
+           - mix dialyzer --ignore-exit-status
+           - cache store dialyzer-plt-$ERLANG_VERSION-$SEMAPHORE_GIT_PR_BRANCH$SEMAPHORE_WORKFLOW_NUMBER priv/plts
+           - mix dialyzer --no-check --no-compile
