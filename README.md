@@ -139,32 +139,32 @@ Erlang 24.2
 
 Benchmark suite executing with the following configuration:
 warmup: 2 s
-time: 10 s
+time: 1.67 min
 memory time: 2 s
 parallel: 1
 inputs: none specified
-Estimated total run time: 42 s
+Estimated total run time: 5.20 min
 
 Benchmarking decrypt...
 Benchmarking encrypt...
 Benchmarking encrypt_and_decrypt...
 
 Name                          ips        average  deviation         median         99th %
-decrypt                  427.14 K        2.34 μs  ±1266.90%           2 μs           3 μs
-encrypt                  312.90 K        3.20 μs  ±1470.89%           3 μs           6 μs
-encrypt_and_decrypt      186.35 K        5.37 μs   ±567.93%           5 μs          11 μs
+decrypt                  396.50 K        2.52 μs  ±2661.82%        1.90 μs        3.90 μs
+encrypt                  375.22 K        2.67 μs  ±1236.40%        2.90 μs        3.90 μs
+encrypt_and_decrypt      197.04 K        5.08 μs   ±906.77%        4.90 μs        6.90 μs
 
 Comparison:
-decrypt                  427.14 K
-encrypt                  312.90 K - 1.37x slower +0.85 μs
-encrypt_and_decrypt      186.35 K - 2.29x slower +3.03 μs
+decrypt                  396.50 K
+encrypt                  375.22 K - 1.06x slower +0.143 μs
+encrypt_and_decrypt      197.04 K - 2.01x slower +2.55 μs
 
 Memory usage statistics:
 
 Name                   Memory usage
-decrypt                     3.40 KB
-encrypt                     1.96 KB - 0.58x memory usage -1.43750 KB
-encrypt_and_decrypt         6.20 KB - 1.82x memory usage +2.80 KB
+decrypt                     3.06 KB
+encrypt                     1.65 KB - 0.54x memory usage -1.41406 KB
+encrypt_and_decrypt         5.80 KB - 1.90x memory usage +2.74 KB
 
 **All measurements for memory usage were the same**
 ```
