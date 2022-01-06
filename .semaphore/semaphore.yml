@@ -36,6 +36,9 @@ blocks:
         commands:
           - cache store
       jobs:
+        - name: "Credo"
+          commands:
+            - mix credo
         - name: "Test"
           matrix:
             - env_var: ELIXIR_VERSION
@@ -44,6 +47,8 @@ blocks:
               values: ["23.3", "24.2"]
           commands:
             - bin/test
+            - test-results publish /tmp/test-results
+            - test-results gen-pipeline-report
         - name: "Dialyzer"
           matrix:
             - env_var: ELIXIR_VERSION

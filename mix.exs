@@ -39,7 +39,8 @@ defmodule Cloak.Mixfile do
       {:inch_ex, "~> 2.0", only: :docs},
       {:benchee, "~> 1.0", only: [:dev]},
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
-      {:credo, "~> 1.6", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:junit_formatter, "~> 3.3", only: [:test]}
     ]
   end
 
