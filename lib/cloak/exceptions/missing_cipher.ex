@@ -3,10 +3,7 @@ defmodule Cloak.MissingCipher do
   defexception [:message, :vault, :label, :ciphertext]
 
   def exception(opts) do
-    msg =
-      opts
-      |> Enum.map(fn {key, val} -> "#{key}: #{inspect(val)}" end)
-      |> Enum.join(", ")
+    msg = Enum.map_join(opts, ", ", fn {key, val} -> "#{key}: #{inspect(val)}" end)
 
     __MODULE__
     |> struct(opts)

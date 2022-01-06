@@ -13,7 +13,7 @@ defmodule Cloak.Tags.DecoderTest do
     end
 
     test "it can decode tags of arbitrary length" do
-      tag = 1..4934 |> Enum.to_list() |> Enum.map(fn num -> <<num>> end) |> Enum.join()
+      tag = 1..4934 |> Enum.to_list() |> Enum.map_join(fn num -> <<num>> end)
 
       assert decode(<<1, 130, 19, 70>> <> tag <> <<20, 30, 12>>) == %{
                tag: tag,

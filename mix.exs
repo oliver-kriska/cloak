@@ -20,7 +20,10 @@ defmodule Cloak.Mixfile do
       package: package(),
       deps: deps(),
       docs: docs(),
-      elixirc_paths: elixirc_paths(Mix.env())
+      elixirc_paths: elixirc_paths(Mix.env()),
+      dialyzer: [
+        plt_file: {:no_warn, "priv/plts/dialyzer.plt"}
+      ]
     ]
   end
 
@@ -34,7 +37,9 @@ defmodule Cloak.Mixfile do
       {:excoveralls, "~> 0.12", only: :test},
       {:ex_doc, ">= 0.0.0", only: [:dev, :docs]},
       {:inch_ex, "~> 2.0", only: :docs},
-      {:benchee, "~> 1.0", only: [:dev]}
+      {:benchee, "~> 1.0", only: [:dev]},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false}
     ]
   end
 

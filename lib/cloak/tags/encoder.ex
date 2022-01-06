@@ -50,8 +50,7 @@ defmodule Cloak.Tags.Encoder do
   defp to_bitstring(decimal) do
     decimal
     |> convert()
-    |> Enum.map(fn num -> <<num>> end)
-    |> Enum.join()
+    |> Enum.map_join(fn num -> <<num>> end)
   end
 
   defp convert(decimal), do: convert(decimal, [])

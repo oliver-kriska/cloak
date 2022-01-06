@@ -6,8 +6,8 @@ defmodule Cloak.Ciphers.AES.GCM do
 
   @behaviour Cloak.Cipher
 
-  alias Cloak.Tags.{Encoder, Decoder}
   alias Cloak.Crypto
+  alias Cloak.Tags.{Decoder, Encoder}
 
   @aad "AES256GCM"
   @default_iv_length 16

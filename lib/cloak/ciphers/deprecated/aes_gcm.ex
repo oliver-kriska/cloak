@@ -21,8 +21,8 @@ defmodule Cloak.Ciphers.Deprecated.AES.GCM do
   """
   @behaviour Cloak.Cipher
 
-  alias Cloak.Tags.Decoder
   alias Cloak.Crypto
+  alias Cloak.Tags.Decoder
 
   @cipher Crypto.map_cipher(:aes_256_gcm)
   @aad "AES256GCM"
@@ -38,10 +38,11 @@ defmodule Cloak.Ciphers.Deprecated.AES.GCM do
   def decrypt(ciphertext, opts) do
     key = Keyword.fetch!(opts, :key)
 
-    with <<iv::binary-16, ciphertag::binary-16, ciphertext::binary>> <- decode(ciphertext, opts) do
-      plaintext = Crypto.decrypt_one_time_aead(@cipher, key, iv, @aad, ciphertext, ciphertag)
-      {:ok, plaintext}
-    else
+    case decode(ciphertext, opts) do
+      <<iv::binary-16, ciphertag::binary-16, ciphertext::binary>> ->
+        plaintext = Crypto.decrypt_one_time_aead(@cipher, key, iv, @aad, ciphertext, ciphertag)
+        {:ok, plaintext}
+
       _other ->
         :error
     end

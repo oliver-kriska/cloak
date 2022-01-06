@@ -10,7 +10,7 @@ defmodule Cloak.Tags.EncoderTest do
     end
 
     test "when byte_size(tag) >= 128 it returns a bitstring with the length of value as multiple bytes" do
-      tag = 1..4934 |> Enum.to_list() |> Enum.map(fn num -> <<num>> end) |> Enum.join()
+      tag = 1..4934 |> Enum.to_list() |> Enum.map_join(fn num -> <<num>> end)
       assert encode(tag) == <<1, 130, 19, 70>> <> tag
     end
   end

@@ -6,8 +6,8 @@ defmodule Cloak.Ciphers.AES.CTR do
 
   @behaviour Cloak.Cipher
 
-  alias Cloak.Tags.{Encoder, Decoder}
   alias Cloak.Crypto
+  alias Cloak.Tags.{Decoder, Encoder}
 
   @cipher Crypto.map_cipher(:aes_256_ctr)
 
