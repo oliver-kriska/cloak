@@ -39,7 +39,7 @@ blocks:
         - name: "Test"
           matrix:
             - env_var: ELIXIR_VERSION
-              values: ["1.11.3", "1.12.1", "1.13.1"]
+              values: ["1.11.4", "1.12.3", "1.13.1"]
             - env_var: ERLANG_VERSION
               values: ["23.3", "24.2"]
           commands:
@@ -47,7 +47,7 @@ blocks:
         - name: "Dialyzer"
           matrix:
             - env_var: ELIXIR_VERSION
-              values: ["1.11.3", "1.12.1", "1.13.1"]
+              values: ["1.11.4", "1.12.3", "1.13.1"]
             - env_var: ERLANG_VERSION
               values: ["23.3", "24.2"]
           commands:
