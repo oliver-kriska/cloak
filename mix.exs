@@ -33,7 +33,8 @@ defmodule Cloak.Mixfile do
       {:jason, "~> 1.0", optional: true},
       {:excoveralls, "~> 0.12", only: :test},
       {:ex_doc, ">= 0.0.0", only: [:dev, :docs]},
-      {:inch_ex, "~> 2.0", only: :docs}
+      {:inch_ex, "~> 2.0", only: :docs},
+      {:benchee, "~> 1.0", only: [:dev]}
     ]
   end
 
