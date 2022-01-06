@@ -37,6 +37,11 @@ blocks:
           - cache store
       jobs:
         - name: "Credo"
+          env_vars:
+            - name: ERLANG_VERSION
+              value: "24.2"
+            - name: ELIXIR_VERSION
+              value: "1.13.1"
           commands:
             - mix credo
         - name: "Test"
