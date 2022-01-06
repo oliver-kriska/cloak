@@ -124,7 +124,7 @@ Benchee.run(
     "encrypt_and_decrypt" => fn -> MyVault.encrypt!("aqGwdxdSRg5XIpOvuDJv6YSDOyLwJfdjwkwgA8sr")|> MyVault.decrypt!() end,
   },
   time: 100,
-  parallel: 5,
+  parallel: 1,
   memory_time: 2
 )
 ```
@@ -139,32 +139,32 @@ Erlang 24.2
 
 Benchmark suite executing with the following configuration:
 warmup: 2 s
-time: 1.67 min
+time: 10 s
 memory time: 2 s
-parallel: 5
+parallel: 1
 inputs: none specified
-Estimated total run time: 5.20 min
+Estimated total run time: 42 s
 
 Benchmarking decrypt...
 Benchmarking encrypt...
 Benchmarking encrypt_and_decrypt...
 
 Name                          ips        average  deviation         median         99th %
-decrypt                  182.54 K        5.48 μs   ±976.95%        4.99 μs        8.99 μs
-encrypt_and_decrypt       21.88 K       45.71 μs   ±122.39%       43.99 μs      100.99 μs
-encrypt                   21.30 K       46.94 μs   ±106.20%       43.99 μs       89.99 μs
+decrypt                  427.14 K        2.34 μs  ±1266.90%           2 μs           3 μs
+encrypt                  312.90 K        3.20 μs  ±1470.89%           3 μs           6 μs
+encrypt_and_decrypt      186.35 K        5.37 μs   ±567.93%           5 μs          11 μs
 
 Comparison:
-decrypt                  182.54 K
-encrypt_and_decrypt       21.88 K - 8.34x slower +40.23 μs
-encrypt                   21.30 K - 8.57x slower +41.47 μs
+decrypt                  427.14 K
+encrypt                  312.90 K - 1.37x slower +0.85 μs
+encrypt_and_decrypt      186.35 K - 2.29x slower +3.03 μs
 
 Memory usage statistics:
 
 Name                   Memory usage
 decrypt                     3.40 KB
-encrypt_and_decrypt         6.20 KB - 1.82x memory usage +2.80 KB
 encrypt                     1.96 KB - 0.58x memory usage -1.43750 KB
+encrypt_and_decrypt         6.20 KB - 1.82x memory usage +2.80 KB
 
 **All measurements for memory usage were the same**
 ```
