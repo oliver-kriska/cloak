@@ -284,7 +284,11 @@ defmodule Cloak.Vault do
   @doc false
   def save_config(key, config), do: :persistent_term.put(key, config)
 
-  def read_config(key), do: :persistent_term.get(key, :error)
+  def read_config(key) do
+    :persistent_term.get(key)
+  rescue
+    _ in ArgumentError -> :error
+  end
 
   @doc false
   def encrypt(config, plaintext) do
